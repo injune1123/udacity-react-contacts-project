@@ -97,6 +97,13 @@ const movies = {
   },
 };
 
+function getUserNameById (id, users) {
+	return users[id].name
+}
+
+function getMovieNameById (id, movies) {
+	return movies[id].name
+}
 class App extends Component {
   render() {
     return (
@@ -106,6 +113,7 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         <h2>Favorite Movies</h2>
+		{ profiles.map( (profile) => (<p>{getUserNameById(profile.id, users)}'s favorite movie is {getMovieNameById(profile.favoriteMovieID, movies)}.</p>))}
       </div>
     );
   }
